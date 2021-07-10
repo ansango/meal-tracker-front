@@ -1,11 +1,10 @@
-import React from "react";
 import { MealsListItem } from "./MealsListItem";
 
-const newSevenDays = Array(7)
+const nextSevenDays = Array(7)
   .fill()
-  .map((_, i) => {
+  .map((_, index) => {
     const date = new Date();
-    date.setDate(date.getDate() + i);
+    date.setDate(date.getDate() + index);
     return date;
   });
 
@@ -14,17 +13,24 @@ const datesAreSameDay = (date1, date2) =>
   date1.getMonth() === date2.getMonth() &&
   date1.getDate() === date2.getDate();
 
-export const MealsList = ({ isLoading, meals }) => (
+export const MealsList = ({ isLoading, meals, onDelete }) => (
   <div className="list-container">
     <h1>Planned Meals</h1>
     {isLoading ? (
-      <p>Loadin...</p>
+      <p>Loading...</p>
     ) : (
-      newSevenDays.map((date, index) => {
+      nextSevenDays.map((date, index) => {
         const mealForDay = meals.find((meal) =>
           datesAreSameDay(date, meal.plannedDate)
         );
-        return <MealsListItem key={index} meal={mealForDay} date={date} />;
+        return (
+          <MealsListItem
+            key={index}
+            meal={mealForDay}
+            date={date}
+            onDelete={onDelete}
+          />
+        );
       })
     )}
   </div>
