@@ -10,7 +10,7 @@ export const HomePage = () => {
     isLoading: isLoadingIngredients,
     setIngredients,
   } = useIngredients();
-  
+
   const deleteMethod = { method: "delete" };
 
   const onDeleteMeal = async (id) => {
@@ -42,7 +42,7 @@ export const HomePage = () => {
         />
         <Link to="/shopping-list">
           <button className="shopping-list-button list-container full-width">
-            Generate Shopping List
+            Lista de la compra
           </button>
         </Link>
       </div>

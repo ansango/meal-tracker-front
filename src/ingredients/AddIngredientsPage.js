@@ -10,7 +10,8 @@ export const AddIngredientsPage = () => {
   const [units, setUnits] = useState(unitOptions[1]);
   const history = useHistory();
 
-  const addToIngredients = async () => {
+  const addToIngredients = async (e) => {
+    e.preventDefault();
     const newIngredient = {
       name: name.toLowerCase(),
       amount,
@@ -28,13 +29,14 @@ export const AddIngredientsPage = () => {
     <div className="page">
       <BackButton />
       <div className="centered-container">
-        <h1>Add Ingredient</h1>
+        <h1>Añade un ingrediente</h1>
         <input
           type="text"
-          placeholder="Enter ingredient name"
+          placeholder="Nombre del ingrediente"
           className="space-after space-before full-width"
           value={name}
           onChange={(event) => setName(event.target.value)}
+          required
         />
         <input
           type="number"
@@ -49,7 +51,7 @@ export const AddIngredientsPage = () => {
           options={unitOptions}
         ></Dropdown>
         <button className="space-before full-width" onClick={addToIngredients}>
-          Add
+          Añadir
         </button>
       </div>
     </div>

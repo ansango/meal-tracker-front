@@ -16,10 +16,10 @@ export const MealsListItem = ({ meal, date, onDelete }) => {
       ) : (
         <>
           <h3>{date.getDate()}</h3>
-          <p>No meal planned</p>
+          <p>Nada previsto</p>
           <div className="right-action">
             <Link to={`/recipes?date=${date.toString()}`}>
-              <button>Add</button>
+              <button>Añadir</button>
             </Link>
           </div>
         </>

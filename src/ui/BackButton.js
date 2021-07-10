@@ -6,7 +6,7 @@ export const BackButton = () => {
 
   return (
     <button className="back-button" onClick={history.goBack}>
-      Back
+      Volver
     </button>
   );
 };
