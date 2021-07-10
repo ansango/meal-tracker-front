@@ -3,7 +3,7 @@ import { IngredientsListItem } from "./IngredientsListItem";
 
 export const IngredientsList = ({ ingredients, isLoading, onDelete }) => (
   <div className="list-container">
-    <h1>Ingredients</h1>
+    <h2>Ingredientes</h2>
     {isLoading ? (
       <p>Loading...</p>
     ) : (

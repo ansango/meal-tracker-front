@@ -1,9 +1,11 @@
 import "./App.css";
 import { Routes } from "./Routes";
+import { Navigation } from "./ui";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App container mx-auto">
+      <Navigation />
       <Routes />
     </div>
   );

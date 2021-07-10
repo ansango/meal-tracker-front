@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useMeals, MealsList } from "../meals";
 import { useIngredients, IngredientsList } from "../ingredients";
+import { ToggleTheme } from "../ui";
 
 export const HomePage = () => {
   const { meals, isLoading: isLoadingMeals, setMeals } = useMeals();
