@@ -1,8 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useMeals, MealsList } from "../meals";
 import { useIngredients, IngredientsList } from "../ingredients";
-import { ToggleTheme } from "../ui";
 
 export const HomePage = () => {
   const { meals, isLoading: isLoadingMeals, setMeals } = useMeals();
@@ -27,26 +25,18 @@ export const HomePage = () => {
   };
 
   return (
-    <div className="page-container">
-      <div className="column">
-        <MealsList
-          isLoading={isLoadingMeals}
-          meals={meals}
-          onDelete={onDeleteMeal}
-        />
-      </div>
-      <div className="column">
-        <IngredientsList
-          isLoading={isLoadingIngredients}
-          ingredients={ingredients}
-          onDelete={onDeleteIngredient}
-        />
-        <Link to="/shopping-list">
-          <button className="shopping-list-button list-container full-width">
-            Lista de la compra
-          </button>
-        </Link>
-      </div>
+    <div className="grid md:grid-cols-2">
+      <MealsList
+        isLoading={isLoadingMeals}
+        meals={meals}
+        onDelete={onDeleteMeal}
+      />
+
+      <IngredientsList
+        isLoading={isLoadingIngredients}
+        ingredients={ingredients}
+        onDelete={onDeleteIngredient}
+      />
     </div>
   );
 };

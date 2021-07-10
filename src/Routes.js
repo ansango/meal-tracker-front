@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Navigation } from "./ui";
 import { HomePage } from "./home";
 import { AddIngredientsPage } from "./ingredients";
 import { RecipeSearchPage } from "./recipes";
@@ -14,6 +15,7 @@ const routes = [
 
 export const Routes = () => (
   <Router>
+    <Navigation />
     <Switch>
       {routes.map((route, index) => (
         <Route key={index} path={route.path} exact={route.exact}>

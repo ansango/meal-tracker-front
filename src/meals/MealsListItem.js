@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import { SmallX } from "../ui";
+import { DeleteButton, AddMealButton } from "../ui";
 
 export const MealsListItem = ({ meal, date, onDelete }) => {
   const onDeleteMeal = () => onDelete(meal._id);
+  const url = `/recipes?date=${date.toString()}`;
   return (
     <div className="list-item">
       {meal ? (
@@ -10,18 +10,14 @@ export const MealsListItem = ({ meal, date, onDelete }) => {
           <h3>{date.getDate()}</h3>
           <p>{meal.recipe.name}</p>
           <div className="right-action">
-            <SmallX onClick={onDeleteMeal} />
+            <DeleteButton onClick={onDeleteMeal} />
           </div>
         </>
       ) : (
         <>
           <h3>{date.getDate()}</h3>
           <p>Nada previsto</p>
-          <div className="right-action">
-            <Link to={`/recipes?date=${date.toString()}`}>
-              <button>Añadir</button>
-            </Link>
-          </div>
+          <AddMealButton url={url} />
         </>
       )}
     </div>

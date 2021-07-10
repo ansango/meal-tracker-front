@@ -1,4 +1,4 @@
-import { SmallX } from "../ui";
+import { DeleteButton } from "../ui";
 
 export const IngredientsListItem = ({ ingredient, onDelete }) => {
   const onDeleteIngredient = () => onDelete(ingredient.name);
@@ -9,7 +9,7 @@ export const IngredientsListItem = ({ ingredient, onDelete }) => {
         {ingredient.amount} {ingredient.units}
       </p>
       <div className="right-action">
-        <SmallX onClick={onDeleteIngredient} />
+        <DeleteButton onClick={onDeleteIngredient} />
       </div>
     </div>
   );

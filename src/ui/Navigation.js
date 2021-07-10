@@ -1,4 +1,5 @@
-import { ToggleTheme } from "./ToggleTheme";
+import { ToggleTheme } from "./buttons";
+import { ShoppingListButton } from "../ui";
 
 export const Navigation = () => (
   <div className="text-blueGray-700 rounded-lg">
@@ -11,7 +12,10 @@ export const Navigation = () => (
           </h2>
         </div>
       </span>
-      <ToggleTheme />
+      <div>
+        <ShoppingListButton />
+        <ToggleTheme />
+      </div>
     </div>
   </div>
 );

@@ -14,7 +14,7 @@ const datesAreSameDay = (date1, date2) =>
   date1.getDate() === date2.getDate();
 
 export const MealsList = ({ isLoading, meals, onDelete }) => (
-  <div className="list-container">
+  <div>
     <h2>Menú Semanal</h2>
     {isLoading ? (
       <p>Loading...</p>

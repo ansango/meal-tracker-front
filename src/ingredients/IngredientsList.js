@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
+import { AddIngredientButton } from "../ui";
 import { IngredientsListItem } from "./IngredientsListItem";
 
 export const IngredientsList = ({ ingredients, isLoading, onDelete }) => (
-  <div className="list-container">
+  <div>
     <h2>Ingredientes</h2>
     {isLoading ? (
       <p>Loading...</p>
@@ -15,8 +15,7 @@ export const IngredientsList = ({ ingredients, isLoading, onDelete }) => (
         />
       ))
     )}
-    <Link to="/add-ingredient">
-      <button className="space-before">Añadir Ingrediente</button>
-    </Link>
+
+    <AddIngredientButton />
   </div>
 );
