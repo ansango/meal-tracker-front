@@ -1,3 +1,4 @@
+import { route } from "../utils/endpoints";
 import { useState, useEffect } from "react";
 
 export const useMeals = () => {
@@ -6,7 +7,7 @@ export const useMeals = () => {
 
   useEffect(() => {
     const loadMeals = async () => {
-      const response = await fetch("/meals");
+      const response = await fetch(`${route.meals}`);
       const rawMealsResponse = await response.json();
       setTimeout(() => {
         setRawMeals(rawMealsResponse);

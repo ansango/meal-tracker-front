@@ -1,3 +1,4 @@
+import { route } from "../utils/endpoints";
 import { useState, useEffect } from "react";
 
 export const useShoppingList = () => {
@@ -7,7 +8,7 @@ export const useShoppingList = () => {
 
   useEffect(() => {
     const loadShoppingList = async () => {
-      const response = await fetch("/shopping-list");
+      const response = await fetch(`${route.shopping}`);
       const items = await response.json();
       const noItems = items.length === 0;
       setTimeout(() => {

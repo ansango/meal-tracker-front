@@ -1,3 +1,4 @@
+import { route } from "../utils/endpoints";
 import { useState, useEffect } from "react";
 
 export const useRecipesSearchResults = (searchString) => {
@@ -6,7 +7,7 @@ export const useRecipesSearchResults = (searchString) => {
   useEffect(() => {
     setIsLoading(true);
     const loadSearchResults = async () => {
-      const response = await fetch(`/recipes?search=${searchString}`);
+      const response = await fetch(`${route.recipes}${searchString}`);
       const results = await response.json();
       setTimeout(() => {
         setSearchResults(results);

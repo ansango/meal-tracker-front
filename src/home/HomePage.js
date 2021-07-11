@@ -1,4 +1,5 @@
 import React from "react";
+import { route } from "../utils/endpoints";
 import { useMeals, MealsList } from "../meals";
 import { useIngredients, IngredientsList } from "../ingredients";
 import { Container, Title } from "../ui";
@@ -15,13 +16,13 @@ export const HomePage = () => {
   const deleteMethod = { method: "delete" };
 
   const onDeleteMeal = async (id) => {
-    const response = await fetch(`/meals/${id}`, deleteMethod);
+    const response = await fetch(`${route.meals}/${id}`, deleteMethod);
     const updatedMeals = await response.json();
     setMeals(updatedMeals);
   };
 
   const onDeleteIngredient = async (name) => {
-    const response = await fetch(`/ingredients/${name}`, deleteMethod);
+    const response = await fetch(`${route.ingredients}/${name}`, deleteMethod);
     const updatedIngredients = await response.json();
     setIngredients(updatedIngredients);
   };

@@ -1,7 +1,6 @@
 export const BaseButton = ({
   children,
   onClick,
-
   text = "blue-800",
   darkText = "blue-300",
   color = "blue-200",

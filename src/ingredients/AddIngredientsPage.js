@@ -1,3 +1,4 @@
+import { route } from "../utils/endpoints";
 import { useState } from "react";
 import { useHistory } from "react-router";
 import {
@@ -25,7 +26,7 @@ export const AddIngredientsPage = () => {
       amount,
       units,
     };
-    await fetch("/ingredients", {
+    await fetch(`${route.ingredients}`, {
       method: "post",
       body: JSON.stringify(newIngredient),
       headers: { "Content-Type": "application/json" },

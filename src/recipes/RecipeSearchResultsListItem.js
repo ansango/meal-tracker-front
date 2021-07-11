@@ -1,3 +1,4 @@
+import { route } from "../utils/endpoints";
 import { useLocation, useHistory } from "react-router-dom";
 import { CardRecipe } from "../ui";
 
@@ -15,7 +16,7 @@ export const RecipeSearchResultsListItem = ({ recipe, ingredients = [] }) => {
   );
 
   const addMealWithRecipe = async () => {
-    await fetch("/meals", {
+    await fetch(`${route.meals}`, {
       method: "post",
       body: JSON.stringify({ date: selectedDate, recipeId: recipe.id }),
       headers: { "Content-Type": "application/json" },
