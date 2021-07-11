@@ -8,6 +8,8 @@ export {
   ShoppingListButton,
   SearchButton,
   FakeButton,
+  AddMealSearchedButton,
+  ViewRecipeDetailButton,
 } from "./buttons";
 
 export {

@@ -9,3 +9,5 @@ export { DeleteButton } from "./DeleteButton";
 export { ToggleTheme } from "./ThemeButton";
 export { SearchButton } from "./SearchButton";
 export { FakeButton } from "./FakeButton";
+export { AddMealSearchedButton } from "./AddMealSearchedButton";
+export { ViewRecipeDetailButton } from "./ViewRecipeDetailButton";

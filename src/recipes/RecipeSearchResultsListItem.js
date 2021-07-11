@@ -3,7 +3,11 @@ import { useLocation, useHistory } from "react-router-dom";
 import { CardRecipe } from "../ui";
 import { formatIntlDate } from "../utils/formatDate";
 
-export const RecipeSearchResultsListItem = ({ recipe, ingredients = [] }) => {
+export const RecipeSearchResultsListItem = ({
+  recipe,
+  ingredients = [],
+  url,
+}) => {
   const history = useHistory();
   const { search } = useLocation();
   const params = new URLSearchParams(search);
@@ -25,11 +29,14 @@ export const RecipeSearchResultsListItem = ({ recipe, ingredients = [] }) => {
     history.push("/");
   };
 
+  const _url = `${url}/${recipe.id}`;
+
   return (
     <CardRecipe
       onClick={addMealWithRecipe}
       name={recipe.name}
       missingIngredients={missingIngredients}
+      url={_url}
     />
   );
 };

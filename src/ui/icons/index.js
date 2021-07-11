@@ -9,6 +9,7 @@ export {
   HiHashtag as HashTagIcon,
   HiBookmark as BookMarkIcon,
   HiOutlineInformationCircle as InfoIcon,
+  HiOutlineDocumentText as DetailIcon,
 } from "react-icons/hi";
 
 export {
