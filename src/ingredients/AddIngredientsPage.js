@@ -14,7 +14,7 @@ const unitOptions = ["kg", "g", "mg"];
 
 export const AddIngredientsPage = () => {
   const title = "Añade un ingrediente";
-  const [name, setName] = useState("");
+  const [name, setName] = useState("Agua");
   const [amount, setAmount] = useState(0);
   const [units, setUnits] = useState(unitOptions[1]);
   const history = useHistory();
