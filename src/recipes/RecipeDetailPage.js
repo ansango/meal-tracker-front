@@ -14,7 +14,7 @@ export const RecipeDetailPage = () => {
 };
 
 const DetailComponent = ({ recipe }) => {
-  const { name, ingredients, originalRecipeLink } = recipe;
+  const { name, ingredients } = recipe;
   const ingredientsName = ingredients.map((ingredient) => ingredient.name);
   console.log(ingredientsName);
   return (
