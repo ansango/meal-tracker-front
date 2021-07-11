@@ -1,12 +1,13 @@
 import { route } from "../utils/endpoints";
 import { useLocation, useHistory } from "react-router-dom";
 import { CardRecipe } from "../ui";
+import { formatIntlDate } from "../utils/formatDate";
 
 export const RecipeSearchResultsListItem = ({ recipe, ingredients = [] }) => {
   const history = useHistory();
   const { search } = useLocation();
   const params = new URLSearchParams(search);
-  const selectedDate = new Date(params.get("date"));
+  const selectedDate = formatIntlDate(params.get("date"));
 
   const missingIngredients = recipe.ingredients.filter(
     (recipeIngredient) =>

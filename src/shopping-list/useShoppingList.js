@@ -11,9 +11,9 @@ export const useShoppingList = () => {
       const response = await fetch(`${route.shopping}`);
       const items = await response.json();
       const noItems = items.length === 0;
+      setNoItems(noItems);
+      setItems(items);
       setTimeout(() => {
-        setNoItems(noItems);
-        setItems(items);
         setIsLoading(false);
       }, 500);
     };

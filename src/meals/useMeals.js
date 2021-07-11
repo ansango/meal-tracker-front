@@ -9,13 +9,14 @@ export const useMeals = () => {
     const loadMeals = async () => {
       const response = await fetch(`${route.meals}`);
       const rawMealsResponse = await response.json();
+      setRawMeals(rawMealsResponse);
       setTimeout(() => {
-        setRawMeals(rawMealsResponse);
         setIsLoading(false);
       }, 500);
     };
     loadMeals();
   }, []);
+
   return {
     isLoading,
     meals: rawMeals.map((rawMeal) => ({

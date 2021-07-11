@@ -1,11 +1,13 @@
 import { DeleteButton, AddMealButton, CardMeal } from "../ui";
+import { formatDateIntl } from "../utils/formatDate";
 
 export const MealsListItem = ({ meal, date, onDelete }) => {
+  const intlDate = formatDateIntl(date);
   const onDeleteMeal = () => onDelete(meal._id);
-  const url = `/recipes?date=${date.toString()}`;
+  const url = `/recipes?date=${intlDate.url}`;
 
   const data = {
-    date: date.getDate(),
+    date: intlDate.el,
     meal: meal ? meal.recipe.name : "Nada previsto",
   };
 

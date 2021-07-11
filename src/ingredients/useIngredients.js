@@ -8,8 +8,8 @@ export const useIngredients = () => {
     const loadIngredients = async () => {
       const response = await fetch(`${route.ingredients}`);
       const ingredients = await response.json();
+      setIngredients(ingredients);
       setTimeout(() => {
-        setIngredients(ingredients);
         setIsLoading(false);
       }, 500);
     };

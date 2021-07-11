@@ -1,4 +1,5 @@
-const BASE = "https://meal-tracker-back.herokuapp.com";
+//"https://meal-tracker-back.herokuapp.com";
+const BASE = "http://localhost:8080";
 
 export const route = {
   ingredients: `${BASE}/ingredients`,
