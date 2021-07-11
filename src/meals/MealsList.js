@@ -1,4 +1,4 @@
-import { Subtitle } from "../ui";
+import { Subtitle, LoaderCard } from "../ui";
 import { CalendarIcon } from "../ui/icons";
 import { MealsListItem } from "./MealsListItem";
 
@@ -23,8 +23,9 @@ export const MealsList = ({ isLoading, meals, onDelete }) => {
         <CalendarIcon />
         <Subtitle subtitle={subtitle} />
       </div>
+
       {isLoading ? (
-        <p>Loading...</p>
+        <LoaderCard amount={5} />
       ) : (
         nextSevenDays.map((date, index) => {
           const mealForDay = meals.find((meal) =>

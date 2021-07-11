@@ -7,8 +7,10 @@ export const useIngredients = () => {
     const loadIngredients = async () => {
       const response = await fetch("/ingredients");
       const ingredients = await response.json();
-      setIngredients(ingredients);
-      setIsLoading(false);
+      setTimeout(() => {
+        setIngredients(ingredients);
+        setIsLoading(false);
+      }, 1500);
     };
 
     loadIngredients();

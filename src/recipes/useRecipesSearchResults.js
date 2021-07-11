@@ -8,9 +8,10 @@ export const useRecipesSearchResults = (searchString) => {
     const loadSearchResults = async () => {
       const response = await fetch(`/recipes?search=${searchString}`);
       const results = await response.json();
-
-      setSearchResults(results);
-      setIsLoading(false);
+      setTimeout(() => {
+        setSearchResults(results);
+        setIsLoading(false);
+      }, 1500);
     };
     loadSearchResults();
   }, [searchString]);

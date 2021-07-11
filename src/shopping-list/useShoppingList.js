@@ -10,9 +10,11 @@ export const useShoppingList = () => {
       const response = await fetch("/shopping-list");
       const items = await response.json();
       const noItems = items.length === 0;
-      setNoItems(noItems);
-      setItems(items);
-      setIsLoading(false);
+      setTimeout(() => {
+        setNoItems(noItems);
+        setItems(items);
+        setIsLoading(false);
+      }, 1500);
     };
 
     loadShoppingList();

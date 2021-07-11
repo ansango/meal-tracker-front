@@ -9,7 +9,7 @@ export const RecipeSearchPage = () => {
   const [searchInputValue, setSearchInputValue] = useState("");
   const [searchString, setSearchString] = useState("");
   const { ingredients } = useIngredients();
-  const { searchResults } = useRecipesSearchResults(searchString);
+  const { searchResults, isLoading } = useRecipesSearchResults(searchString);
 
   const onSearchClick = () => {
     setSearchString(searchInputValue);
@@ -42,6 +42,7 @@ export const RecipeSearchPage = () => {
         <RecipeSearchResultsList
           recipes={searchResults}
           ingredients={ingredients}
+          isLoading={isLoading}
         />
       </div>
     </Container>

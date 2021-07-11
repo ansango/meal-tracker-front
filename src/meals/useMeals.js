@@ -8,8 +8,10 @@ export const useMeals = () => {
     const loadMeals = async () => {
       const response = await fetch("/meals");
       const rawMealsResponse = await response.json();
-      setRawMeals(rawMealsResponse);
-      setIsLoading(false);
+      setTimeout(() => {
+        setRawMeals(rawMealsResponse);
+        setIsLoading(false);
+      }, 1500);
     };
     loadMeals();
   }, []);
