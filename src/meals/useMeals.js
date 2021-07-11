@@ -12,7 +12,7 @@ export const useMeals = () => {
       setTimeout(() => {
         setRawMeals(rawMealsResponse);
         setIsLoading(false);
-      }, 1500);
+      }, 500);
     };
     loadMeals();
   }, []);

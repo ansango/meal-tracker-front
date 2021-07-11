@@ -15,7 +15,7 @@ export const useShoppingList = () => {
         setNoItems(noItems);
         setItems(items);
         setIsLoading(false);
-      }, 1500);
+      }, 500);
     };
 
     loadShoppingList();

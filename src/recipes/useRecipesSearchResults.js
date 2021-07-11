@@ -12,7 +12,7 @@ export const useRecipesSearchResults = (searchString) => {
       setTimeout(() => {
         setSearchResults(results);
         setIsLoading(false);
-      }, 1500);
+      }, 500);
     };
     loadSearchResults();
   }, [searchString]);

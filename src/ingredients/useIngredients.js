@@ -11,7 +11,7 @@ export const useIngredients = () => {
       setTimeout(() => {
         setIngredients(ingredients);
         setIsLoading(false);
-      }, 1500);
+      }, 500);
     };
 
     loadIngredients();

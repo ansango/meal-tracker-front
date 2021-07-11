@@ -8,7 +8,7 @@ export const ToggleTheme = () => {
   const isLight = colorTheme === "light";
   const onTheme = () => setTheme(colorTheme);
   return (
-    <BaseButton onClick={onTheme} color={"white"} darkColor={"gray-900"}>
+    <BaseButton onClick={onTheme}>
       {isLight && <LightIcon size={20} className="text-blue-200" />}
       {isDark && <DarkIcon size={20} className="text-blue-900" />}
     </BaseButton>
