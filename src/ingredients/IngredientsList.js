@@ -1,21 +1,30 @@
-import { AddIngredientButton } from "../ui";
+import { AddIngredientButton, Subtitle } from "../ui";
+import { HashTagIcon } from "../ui/icons";
 import { IngredientsListItem } from "./IngredientsListItem";
 
-export const IngredientsList = ({ ingredients, isLoading, onDelete }) => (
-  <div>
-    <h2>Ingredientes</h2>
-    {isLoading ? (
-      <p>Loading...</p>
-    ) : (
-      ingredients.map((ingredient) => (
-        <IngredientsListItem
-          key={ingredient.name}
-          ingredient={ingredient}
-          onDelete={onDelete}
-        />
-      ))
-    )}
+export const IngredientsList = ({ ingredients, isLoading, onDelete }) => {
+  const subtitle = "Ingredientes";
+  return (
+    <div>
+      <div className="flex justify-between items-center">
+        <div className="flex items-center">
+          <HashTagIcon />
+          <Subtitle subtitle={subtitle} />
+        </div>
 
-    <AddIngredientButton />
-  </div>
-);
+        <AddIngredientButton />
+      </div>
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        ingredients.map((ingredient) => (
+          <IngredientsListItem
+            key={ingredient.name}
+            ingredient={ingredient}
+            onDelete={onDelete}
+          />
+        ))
+      )}
+    </div>
+  );
+};

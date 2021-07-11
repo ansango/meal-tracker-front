@@ -1,16 +1,15 @@
-import { DeleteButton } from "../ui";
+import { DeleteButton, CardIngredient } from "../ui";
 
 export const IngredientsListItem = ({ ingredient, onDelete }) => {
   const onDeleteIngredient = () => onDelete(ingredient.name);
+  const data = {
+    name: ingredient.name,
+    amount: ingredient.amount,
+    units: ingredient.units,
+  };
   return (
-    <div className="list-item">
-      <h3>{ingredient.name}</h3>
-      <p>
-        {ingredient.amount} {ingredient.units}
-      </p>
-      <div className="right-action">
-        <DeleteButton onClick={onDeleteIngredient} />
-      </div>
-    </div>
+    <CardIngredient data={data}>
+      <DeleteButton onClick={onDeleteIngredient} />
+    </CardIngredient>
   );
 };

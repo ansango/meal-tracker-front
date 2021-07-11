@@ -1,5 +1,5 @@
-
 import { useLocation, useHistory } from "react-router-dom";
+import { CardRecipe } from "../ui";
 
 export const RecipeSearchResultsListItem = ({ recipe, ingredients = [] }) => {
   const history = useHistory();
@@ -24,13 +24,10 @@ export const RecipeSearchResultsListItem = ({ recipe, ingredients = [] }) => {
   };
 
   return (
-    <div className="search-list-item" onClick={addMealWithRecipe}>
-      <h3>{recipe.name}</h3>
-      {missingIngredients.length === 0 ? (
-        <p>Todos los ingredientes están en tu lista</p>
-      ) : (
-        <p>Te faltan {missingIngredients.length} ingredientes</p>
-      )}
-    </div>
+    <CardRecipe
+      onClick={addMealWithRecipe}
+      name={recipe.name}
+      missingIngredients={missingIngredients}
+    />
   );
 };

@@ -1,8 +1,10 @@
 import React from "react";
 import { useMeals, MealsList } from "../meals";
 import { useIngredients, IngredientsList } from "../ingredients";
+import { Container, Title } from "../ui";
 
 export const HomePage = () => {
+  const title = "Meal Tracker";
   const { meals, isLoading: isLoadingMeals, setMeals } = useMeals();
   const {
     ingredients,
@@ -25,18 +27,21 @@ export const HomePage = () => {
   };
 
   return (
-    <div className="grid md:grid-cols-2">
-      <MealsList
-        isLoading={isLoadingMeals}
-        meals={meals}
-        onDelete={onDeleteMeal}
-      />
+    <Container>
+      <Title title={title}></Title>
+      <div className="grid gap-10 md:grid-cols-2 py-10">
+        <MealsList
+          isLoading={isLoadingMeals}
+          meals={meals}
+          onDelete={onDeleteMeal}
+        />
 
-      <IngredientsList
-        isLoading={isLoadingIngredients}
-        ingredients={ingredients}
-        onDelete={onDeleteIngredient}
-      />
-    </div>
+        <IngredientsList
+          isLoading={isLoadingIngredients}
+          ingredients={ingredients}
+          onDelete={onDeleteIngredient}
+        />
+      </div>
+    </Container>
   );
 };

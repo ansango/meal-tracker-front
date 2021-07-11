@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Navigation } from "./ui";
+import { Footer, Navigation } from "./ui";
 import { HomePage } from "./home";
 import { AddIngredientsPage } from "./ingredients";
 import { RecipeSearchPage } from "./recipes";
@@ -23,5 +23,6 @@ export const Routes = () => (
         </Route>
       ))}
     </Switch>
+    <Footer />
   </Router>
 );

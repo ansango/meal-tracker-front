@@ -1,3 +1,5 @@
+import { Subtitle } from "../ui";
+import { CalendarIcon } from "../ui/icons";
 import { MealsListItem } from "./MealsListItem";
 
 const nextSevenDays = Array(7)
@@ -13,25 +15,31 @@ const datesAreSameDay = (date1, date2) =>
   date1.getMonth() === date2.getMonth() &&
   date1.getDate() === date2.getDate();
 
-export const MealsList = ({ isLoading, meals, onDelete }) => (
-  <div>
-    <h2>Menú Semanal</h2>
-    {isLoading ? (
-      <p>Loading...</p>
-    ) : (
-      nextSevenDays.map((date, index) => {
-        const mealForDay = meals.find((meal) =>
-          datesAreSameDay(date, meal.plannedDate)
-        );
-        return (
-          <MealsListItem
-            key={index}
-            meal={mealForDay}
-            date={date}
-            onDelete={onDelete}
-          />
-        );
-      })
-    )}
-  </div>
-);
+export const MealsList = ({ isLoading, meals, onDelete }) => {
+  const subtitle = "Menú Semanal";
+  return (
+    <div>
+      <div className="flex items-center">
+        <CalendarIcon />
+        <Subtitle subtitle={subtitle} />
+      </div>
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        nextSevenDays.map((date, index) => {
+          const mealForDay = meals.find((meal) =>
+            datesAreSameDay(date, meal.plannedDate)
+          );
+          return (
+            <MealsListItem
+              key={index}
+              meal={mealForDay}
+              date={date}
+              onDelete={onDelete}
+            />
+          );
+        })
+      )}
+    </div>
+  );
+};

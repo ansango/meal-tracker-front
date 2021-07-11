@@ -1,4 +1,5 @@
 import { useHistory } from "react-router-dom";
+import { BackIcon } from "../icons";
 import { BaseButton } from "./BaseButton";
 
 export const BackButton = () => {
@@ -6,7 +7,7 @@ export const BackButton = () => {
 
   return (
     <BaseButton onClick={history.goBack}>
-      <span>Volver</span>
+      <BackIcon size={20} />
     </BaseButton>
   );
 };

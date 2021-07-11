@@ -1,10 +1,18 @@
 import { useState } from "react";
 import { useHistory } from "react-router";
-import { BackButton, Dropdown } from "../ui";
+import {
+  BackButton,
+  Container,
+  InputForm,
+  PostIngredientButton,
+  SelectForm,
+  Title,
+} from "../ui";
 
 const unitOptions = ["kg", "g", "mg"];
 
 export const AddIngredientsPage = () => {
+  const title = "Añade un ingrediente";
   const [name, setName] = useState("");
   const [amount, setAmount] = useState(0);
   const [units, setUnits] = useState(unitOptions[1]);
@@ -26,34 +34,30 @@ export const AddIngredientsPage = () => {
   };
 
   return (
-    <div className="page">
+    <Container>
       <BackButton />
-      <div className="centered-container">
-        <h1>Añade un ingrediente</h1>
-        <input
-          type="text"
-          placeholder="Nombre del ingrediente"
-          className="space-after space-before full-width"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-          required
-        />
-        <input
-          type="number"
-          className="space-before full-width"
-          value={amount}
-          onChange={(event) => setAmount(event.target.value)}
-        />
-        <Dropdown
-          className="space-before full-width"
-          value={units}
-          onChange={(event) => setUnits(event.target.value)}
-          options={unitOptions}
-        ></Dropdown>
-        <button className="space-before full-width" onClick={addToIngredients}>
-          Añadir
-        </button>
+      <Title title={title} />
+      <div className="max-w-md mx-auto">
+        <div className="grid grid-cols-1 gap-2">
+          <InputForm
+            type="text"
+            placeholder="Nombre del ingrediente"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+          />
+          <InputForm
+            type="number"
+            value={amount}
+            onChange={(event) => setAmount(event.target.value)}
+          />
+          <SelectForm
+            value={units}
+            onChange={(event) => setUnits(event.target.value)}
+            options={unitOptions}
+          ></SelectForm>
+          <PostIngredientButton onClick={addToIngredients} />
+        </div>
       </div>
-    </div>
+    </Container>
   );
 };

@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useIngredients } from "../ingredients";
 import { useRecipesSearchResults } from "./useRecipesSearchResults";
-import { BackButton } from "../ui";
+import { BackButton, Container, SearchButton, Title, InputForm } from "../ui";
 import { RecipeSearchResultsList } from "./RecipeSearchResultsList";
 
 export const RecipeSearchPage = () => {
+  const title = "Añade una comida al menú";
   const [searchInputValue, setSearchInputValue] = useState("");
   const [searchString, setSearchString] = useState("");
   const { ingredients } = useIngredients();
@@ -21,26 +22,28 @@ export const RecipeSearchPage = () => {
   };
 
   return (
-    <div className="page">
+    <Container>
       <BackButton />
-      <div className="centered-container">
-        <h1>Añade una comida al menú</h1>
-        <input
-          type="text"
-          className="space-before space-after full-width"
-          placeholder="Búsca una receta"
-          value={searchInputValue}
-          onChange={(event) => setSearchInputValue(event.target.value)}
-          onKeyPress={(event) => onEnterKeyPress(event.key)}
-        />
-        <button className="full-width space-after" onClick={onSearchClick}>
-          Buscar
-        </button>
+      <div>
+        <Title title={title} />
+        <div className="max-w-md mx-auto">
+          <div className="grid grid-cols-1 gap-2">
+            <InputForm
+              type="text"
+              placeholder="Búsca una receta"
+              value={searchInputValue}
+              onChange={(event) => setSearchInputValue(event.target.value)}
+              onKeyPress={(event) => onEnterKeyPress(event.key)}
+            />
+
+            <SearchButton onClick={onSearchClick} />
+          </div>
+        </div>
         <RecipeSearchResultsList
           recipes={searchResults}
           ingredients={ingredients}
         />
       </div>
-    </div>
+    </Container>
   );
 };
