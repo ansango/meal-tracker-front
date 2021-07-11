@@ -8,6 +8,7 @@ export {
   HiOutlineCalendar as CalendarIcon,
   HiHashtag as HashTagIcon,
   HiBookmark as BookMarkIcon,
+  HiOutlineInformationCircle as InfoIcon,
 } from "react-icons/hi";
 
 export {

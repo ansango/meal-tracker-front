@@ -8,3 +8,4 @@ export { ShoppingListButton } from "./ShoppingListButton";
 export { DeleteButton } from "./DeleteButton";
 export { ToggleTheme } from "./ThemeButton";
 export { SearchButton } from "./SearchButton";
+export { FakeButton } from "./FakeButton";
