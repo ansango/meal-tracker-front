@@ -14,19 +14,13 @@ export const RecipeDetailPage = () => {
 };
 
 const DetailComponent = ({ recipe }) => {
-  const { name, ingredients } = recipe;
-  const ingredientsName = ingredients.map((ingredient) => ingredient.name);
-  console.log(ingredientsName);
+  const { name } = recipe;
+
   return (
     <>
       <Title title={name} />
       <div className="flex flex-col justify-center items-center">
         <Subtitle subtitle={"Ingredientes"} />
-        <ul>
-          {ingredientsName.map((name, index) => (
-            <li key={index}>{name}</li>
-          ))}
-        </ul>
       </div>
     </>
   );
