@@ -8,7 +8,7 @@ export const RecipeSearchResultsList = ({
   url,
 }) => {
   return (
-    <div className="grid gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-3 lg:gap-10 py-10">
+    <div className="grid gap-4 md:grid-cols-1 md:gap-5 lg:grid-cols-2 lg:gap-10 xl:grid-cols-3 py-10">
       {isLoading && <LoaderCard amount={5} />}
       {!isLoading &&
         recipes.map((recipe) => {

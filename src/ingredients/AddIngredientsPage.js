@@ -10,7 +10,7 @@ import {
   Title,
 } from "../ui";
 
-const unitOptions = ["kg", "g", "mg"];
+const unitOptions = ["mg", "gr", "kg", "ml", "l", "undidades"];
 
 export const AddIngredientsPage = () => {
   const title = "Añade un ingrediente";

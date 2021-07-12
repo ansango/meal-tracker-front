@@ -1,4 +1,5 @@
 import { Switch, Route, useRouteMatch } from "react-router-dom";
+
 import { useState } from "react";
 import { useIngredients } from "../ingredients";
 import { useRecipesSearchResults } from "./useRecipesSearchResults";
@@ -9,7 +10,6 @@ import { RecipeDetailPage } from "./RecipeDetailPage";
 export const RecipeSearchPage = () => {
   const title = "Añade una comida al menú";
   const { path, url } = useRouteMatch();
-  
   const [searchInputValue, setSearchInputValue] = useState("");
   const [searchString, setSearchString] = useState("");
   const { ingredients } = useIngredients();
